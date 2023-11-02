@@ -21,8 +21,8 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.github.breadmoirai'
-version = '2.5.1'
+group = 'com.rickbusarow.githubreleasepluginfork'
+version = '2.5.2'
 
 repositories {
     mavenCentral()
@@ -40,12 +40,17 @@ dependencies {
     testImplementation 'org.codehaus.groovy:groovy-test:3.0.9'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
 
 gradlePlugin {
-    website = 'https://github.com/BreadMoirai/github-release-gradle-plugin'
-    vcsUrl = 'https://github.com/BreadMoirai/github-release-gradle-plugin'
+    website = 'https://github.com/RBusarow/github-release-fork'
+    vcsUrl = 'https://github.com/RBusarow/github-release-fork'
     plugins.create('github-release') {
-        id = 'com.github.breadmoirai.github-release'
+        id = 'com.rickbusarow.github-release-fork'
         implementationClass = 'com.github.breadmoirai.githubreleaseplugin.GithubReleasePlugin'
         displayName = 'Github Release Plugin'
         description = 'A Gradle Plugin to send Releases to Github '
