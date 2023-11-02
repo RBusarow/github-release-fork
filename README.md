@@ -1,6 +1,8 @@
 # github-release
-[![Gradle Plugin Portal](https://img.shields.io/badge/version-2.5.1-blue.svg)](https://plugins.gradle.org/plugin/com.github.breadmoirai.github-release/2.5.1)
+[![Gradle Plugin Portal](https://img.shields.io/badge/version-2.5.2-blue.svg)](https://plugins.gradle.org/plugin/com.rickbusarow.github-release-fork/2.5.2)
 
+[p65]: https://github.com/BreadMoirai/github-release-gradle-plugin/pull/65
+[i64]: https://github.com/BreadMoirai/github-release-gradle-plugin/issues/64
 [p63]: https://github.com/BreadMoirai/github-release-gradle-plugin/pull/63
 [p62]: https://github.com/BreadMoirai/github-release-gradle-plugin/pull/62
 [p61]: https://github.com/BreadMoirai/github-release-gradle-plugin/pull/61
@@ -30,6 +32,9 @@
 [i5]: https://github.com/BreadMoirai/github-release-gradle-plugin/issues/5
 [i4]: https://github.com/BreadMoirai/github-release-gradle-plugin/issues/4
 
+---
+This is a fork of [BreadMoirai/github-release-gradle-plugin](https://github.com/BreadMoirai/github-release-gradle-plugin).
+---
 
 A Gradle Plugin to send Releases to Github
 
@@ -42,6 +47,12 @@ If you are using multiple GithubRelease tasks to compose a single release, the r
 Some version numbers are skipped because of issues with the gradle plugin portal.
 
 ## Changelog
+2.5.2
+- Fixed [#64][i64] using [#65][p65]
+- Sets the JDK toolchain/source/target to 1.8 (it was previously un-set)
+- Bumps Gradle to 8.4
+- Changes the (forked) plugin ID to `com.rickbusarow.github-release-fork`
+
 2.5.1
 - Fixed classpath [error](https://github.com/BreadMoirai/github-release-gradle-plugin/pull/62#discussion_r1354355485)
 
@@ -110,14 +121,14 @@ Some version numbers are skipped because of issues with the gradle plugin portal
 
 ### Adding as a dependency
 
-[Gradle Plugin Page](https://plugins.gradle.org/plugin/com.github.breadmoirai.github-release)
+[Gradle Plugin Page](https://plugins.gradle.org/plugin/com.rickbusarow.github-release-fork)
 
 
 Using the plugins DSL:
 
 ```groovy
 plugins {
-  id "com.github.breadmoirai.github-release" version "2.4.1"
+  id "com.rickbusarow.github-release-fork" version "2.5.2"
 }
 ```
 Using legacy plugin application:
@@ -128,11 +139,11 @@ buildscript {
     gradlePluginPortal()
   }
   dependencies {
-    classpath "com.github.breadmoirai:github-release:2.4.1"
+    classpath "com.rickbusarow.githubreleasepluginfork:github-release:2.5.2"
   }
 }
 
-apply plugin: "com.github.breadmoirai.github-release"
+apply plugin: "com.rickbusarow.github-release-fork"
 ```
 
 
